@@ -1508,7 +1508,7 @@ class Parser
 
     protected function parseAttribsToArray($in, $element = '', $include_id = true, $autoclass = '')
     {
-        $style = '';
+        $style = [];
         $class = '';
         $lang = '';
         $colspan = '';
@@ -1643,7 +1643,7 @@ class Parser
             $o['span'] = $this->cleanAttribs($span);
         }
 
-        if ($style) {
+        if (!empty($style)) {
             $so = '';
             $tmps = array();
             foreach ($style as $s) {
